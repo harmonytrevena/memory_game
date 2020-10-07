@@ -1,0 +1,16 @@
+.MemoryCard {
+    height: 80px;
+    width: 150px;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 5px;
+    border: solid 3px #294256;
+    cursor: pointer;
+    background: repeating-linear-gradient(
+        to right,
+        #294256,
+        #294256 10px,
+        #a5cdd9 10px,
+        #a5cdd9 20px
+        );
+}
