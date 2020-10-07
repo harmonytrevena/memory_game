@@ -3,9 +3,34 @@
     width: 150px;
     display: inline-block;
     margin: 5px;
+    cursor: pointer;
+    position: relative;
+    perspective: 800px;
+}
+
+.MemoryCardInner {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 5px;
     border: solid 3px #294256;
-    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.MemoryCardInner.flipped {
+    transform: rotateY(180deg);
+}
+
+.MemoryCardBack, .MemoryCardFront {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.MemoryCardBack {
     background: repeating-linear-gradient(
         to right,
         #294256,
@@ -13,4 +38,10 @@
         #a5cdd9 10px,
         #a5cdd9 20px
         );
+}
+
+.MemoryCardFront {
+    font-size: 30px;
+    line-height: 20px;
+    transform: rotateY(180deg);
 }
